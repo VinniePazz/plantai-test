@@ -1,5 +1,11 @@
 @import-normalize;
 
+:root {
+  --brand: #00ab84;
+  --little-accent: #7d7a75;
+  --border-color: #d7d2cb;
+}
+
 html,
 body {
   box-sizing: border-box;
