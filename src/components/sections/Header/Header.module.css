@@ -1,3 +1,16 @@
-.headerWrapper {
-  background: #fff;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: red;
+  transition: transform 0.4s ease-in-out;
+}
+
+.hiddenHeader {
+  transform: translateY(-100%);
+}
+
+.transparentHeader {
+  background: transparent;
 }
