@@ -4,3 +4,9 @@
   text-align: center;
   color: var(--text-secondary);
 }
+
+@media (min-width: 40em) {
+  .banner {
+    padding: 0.625rem 0.875rem;
+  }
+}

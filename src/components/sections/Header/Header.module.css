@@ -3,8 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: red;
+  background: #fff;
   transition: transform 0.4s ease-in-out;
+  z-index: 999;
 }
 
 .hiddenHeader {

@@ -1,0 +1,8 @@
+.productContainer {
+}
+
+@media (min-width: 40em) {
+  .productContainer {
+    padding: 8rem 9rem 0 9rem;
+  }
+}

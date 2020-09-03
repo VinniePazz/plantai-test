@@ -1,0 +1,42 @@
+.slick-dots {
+  bottom: 15px;
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-dots li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.slick-dots li button {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: transparent;
+  border: 1px solid #2d2a24;
+  outline: none;
+}
+
+.slick-dots li button::before {
+  content: none;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #2d2a24;
+}
+
+.slick-slider {
+  height: 100%;
+}
+
+.slick-list {
+  height: 100% !important;
+}
+
+.slick-list * {
+  height: 100%;
+}

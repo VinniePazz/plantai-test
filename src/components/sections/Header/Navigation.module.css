@@ -10,7 +10,7 @@
 .burgerContainer {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .burger {
@@ -23,7 +23,6 @@
 .burger > span {
   width: 100%;
   height: 2px;
-  margin: 2px 0;
   background-color: #2d2a24;
   position: absolute;
   left: 0;
