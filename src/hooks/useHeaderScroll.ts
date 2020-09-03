@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import throttle from 'lodash.throttle'
 
-const useHeaderScroll = (): {
-  visibility: 'hidden' | 'showed'
+type Visibility = 'hidden' | 'showed'
+type HeaderScrollState = {
+  visibility: Visibility
   transparency: boolean
-} => {
+}
+
+const useHeaderScroll = (): HeaderScrollState => {
   // TODO: make optimizations and properly type annotations
   let isDesktop: boolean = false
 
