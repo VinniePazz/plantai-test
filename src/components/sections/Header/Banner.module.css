@@ -1,0 +1,6 @@
+.banner {
+  background: var(--brand);
+  padding: 0.3125rem 0.875rem;
+  text-align: center;
+  color: var(--text-secondary);
+}

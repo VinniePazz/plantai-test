@@ -2,7 +2,10 @@
 
 :root {
   --brand: #00ab84;
-  --little-accent: #7d7a75;
+  --text-primary: #2d2a24;
+  --text-secondary: #fff;
+  --border-primary: #2d2a24;
+  --border-secondary: #7d7a75;
   --border-color: #d7d2cb;
 }
 
@@ -35,12 +38,15 @@ button {
   outline: none;
   background: inherit;
   color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  display: block;
+  line-height: inherit;
+  cursor: pointer;
 }
 
 a:hover {
