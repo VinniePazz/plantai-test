@@ -5,7 +5,7 @@
   width: 100%;
   background: #fff;
   transition: transform 0.4s ease-in-out;
-  z-index: 999;
+  z-index: 10;
 }
 
 .hiddenHeader {
