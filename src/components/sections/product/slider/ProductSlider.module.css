@@ -1,6 +1,16 @@
+.sliderContainer {
+  width: 100%;
+}
+
 .slide {
   display: block;
   height: auto;
   width: 100%;
   background: #cfc7be;
+}
+
+@media (min-width: 64em) {
+  .sliderContainer {
+    width: 50%;
+  }
 }

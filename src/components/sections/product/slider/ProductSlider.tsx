@@ -16,12 +16,14 @@ const sliderSettings = {
 
 const ProductSlider = () => {
   return (
-    <Slider {...sliderSettings}>
-      <img src={src} className={css.slide} alt="test" />
-      <img src={src} className={css.slide} alt="test" />
-      <img src={src} className={css.slide} alt="test" />
-      <img src={src} className={css.slide} alt="test" />
-    </Slider>
+    <div className={css.sliderContainer}>
+      <Slider {...sliderSettings}>
+        <img src={src} className={css.slide} alt="test" />
+        <img src={src} className={css.slide} alt="test" />
+        <img src={src} className={css.slide} alt="test" />
+        <img src={src} className={css.slide} alt="test" />
+      </Slider>
+    </div>
   )
 }
 

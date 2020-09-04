@@ -9,17 +9,10 @@ type HeaderScrollState = {
 
 const useHeaderScroll = (): HeaderScrollState => {
   // TODO: make optimizations and properly type annotations
-  let isDesktop: boolean = false
-
-  if (window.matchMedia('(min-width: 64em)').matches) {
-    isDesktop = true
-  }
 
   const scrollPositionY = useRef<number>(0)
   const [visibility, setVisibility] = useState<Visibility>('showed')
-  const [transparency, setTransparency] = useState<boolean>(
-    isDesktop ? false : true
-  )
+  const [transparency, setTransparency] = useState<boolean>(false)
 
   useEffect(() => {
     let initialScrollEvent = true
@@ -44,10 +37,8 @@ const useHeaderScroll = (): HeaderScrollState => {
         // Scroll position actualization
         scrollPositionY.current = window.pageYOffset
 
-        // Change transparency of the header. only for mobile and tablets!
-        if (!isDesktop) {
-          setTransparency(window.pageYOffset > 300 ? false : true)
-        }
+        // Change transparency of the header. Works only for mobile and tablets according to media queries
+        setTransparency(window.pageYOffset > 300 ? false : true)
       }
     }
 
@@ -59,7 +50,7 @@ const useHeaderScroll = (): HeaderScrollState => {
     return () => {
       window.removeEventListener('scroll', throttledHandleScroll, true)
     }
-  }, [isDesktop, visibility])
+  }, [visibility])
 
   return { visibility, transparency }
 }

@@ -89,6 +89,7 @@
 
 .addToCart {
   margin: 1.5rem 0;
+  font-weight: 600;
   background-color: #00ab84;
   color: #fff;
   display: block;

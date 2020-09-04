@@ -5,7 +5,7 @@ import ProductDetails from './details/ProductDetails'
 
 const Product = () => {
   return (
-    <main className={css.productContainer}>
+    <main className={css.productSection}>
       <ProductSlider />
       <ProductDetails />
     </main>

@@ -40,3 +40,9 @@
 .slick-list * {
   height: 100%;
 }
+
+@media (min-width: 64em) {
+  .slick-dots {
+    bottom: -30px;
+  }
+}

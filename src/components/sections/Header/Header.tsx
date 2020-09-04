@@ -17,8 +17,10 @@ const Header = () => {
 
   return (
     <header className={className}>
-      <Banner />
-      <Navigation />
+      <div className={css.headerContainer}>
+        <Banner />
+        <Navigation />
+      </div>
     </header>
   )
 }
