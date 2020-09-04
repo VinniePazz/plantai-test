@@ -1,12 +1,13 @@
 import React from 'react'
 import css from './Product.module.css'
 import ProductSlider from './slider/ProductSlider'
+import ProductDetails from './details/ProductDetails'
 
 const Product = () => {
   return (
     <main className={css.productContainer}>
       <ProductSlider />
-      <div className={css.details}>Product details</div>
+      <ProductDetails />
     </main>
   )
 }

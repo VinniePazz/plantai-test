@@ -1,0 +1,105 @@
+.shoppingCart {
+  position: fixed;
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+  will-change: auto;
+  top: 0;
+  right: 0;
+  height: 100%;
+  /* overflow-y: auto; */
+  width: 75vw;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(45, 42, 36, 0.7);
+  z-index: 1000;
+  transform: translateX(0);
+}
+
+.hiddenShoppingCart {
+  transform: translateX(100%);
+}
+
+.cartContent {
+  padding: 0.7rem 1rem 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 75%;
+}
+
+.cartSummary {
+  border-top: 1px solid #d7d2cb;
+  padding: 1.25rem 1rem;
+  min-height: 25%;
+  max-height: 25%;
+  width: 100%;
+}
+
+.cartSummary button {
+  background: var(--brand);
+}
+
+.caartitems {
+  margin: 1.125rem;
+  border-top: 1px solid #d7d2cb;
+}
+
+.cartItem {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #d7d2cb;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.cartItem > div:first-child {
+  height: auto;
+}
+
+.cartItem > div:last-child {
+  height: auto;
+  width: 66.66%;
+  padding-left: 1rem;
+}
+
+.productImg {
+  display: block;
+  width: 100%;
+  max-width: 110px;
+  background: #cfc7be;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  z-index: 10;
+  cursor: pointer;
+  color: #7d7a75;
+}
+
+.closeButton:hover {
+  color: #2d2a24;
+}
+
+/* EMPTY CART */
+.emptyCart {
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.emptyCart h3 {
+  font-size: 1.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.emptyCart p {
+  margin-bottom: 1rem;
+}
+
+.emptyCart button {
+  color: #00ab84;
+  padding-bottom: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}

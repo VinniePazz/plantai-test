@@ -1,0 +1,38 @@
+.productDetails {
+  padding: 1rem;
+}
+
+.productDetails > * {
+  margin-bottom: 1rem;
+}
+
+.productDetails > * {
+  line-height: 1.6;
+}
+
+.detailsHeader {
+  display: flex;
+}
+
+.title {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 1.875rem;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.label {
+  color: #7d7a75;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,26 @@
+.detailsForm {
+}
+
+.detailsForm span {
+  color: #7d7a75;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sizeeWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sizePanel {
+  display: flex;
+}
+
+.sizeGuide {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-left: auto;
+}
