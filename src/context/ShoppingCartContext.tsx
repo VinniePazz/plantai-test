@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useMemo,
-  useCallback,
-  useLayoutEffect,
-  useRef,
-} from 'react'
-import { handleScrollBar } from '../utils/handleScrollbar'
+import React, { useState, useMemo, useCallback } from 'react'
 import useScrollBar from '../hooks/useScrollBar'
 
 interface ShoppingCartContext {

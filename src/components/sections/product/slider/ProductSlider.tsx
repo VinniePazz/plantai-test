@@ -1,8 +1,8 @@
 import React from 'react'
 import Slider from 'react-slick'
-import src from '../../../../assets/balboa_medium_black.jpg'
 import css from './ProductSlider.module.css'
 import './custom-slick-dots.css'
+import { Variant, Product } from '../../../../api/data'
 
 const sliderSettings = {
   dots: true,
@@ -14,14 +14,19 @@ const sliderSettings = {
   dotsClass: `slick-dots`,
 }
 
-const ProductSlider = () => {
+interface ProductSliderProps {
+  variant: Variant | undefined
+  product: Product
+}
+
+const ProductSlider = (props: ProductSliderProps) => {
   return (
     <div className={css.sliderContainer}>
       <Slider {...sliderSettings}>
-        <img src={src} className={css.slide} alt="test" />
-        <img src={src} className={css.slide} alt="test" />
-        <img src={src} className={css.slide} alt="test" />
-        <img src={src} className={css.slide} alt="test" />
+        <img src={props.variant?.img} className={css.slide} alt="test" />
+        <img src={props.variant?.img} className={css.slide} alt="test" />
+        <img src={props.variant?.img} className={css.slide} alt="test" />
+        <img src={props.variant?.img} className={css.slide} alt="test" />
       </Slider>
     </div>
   )

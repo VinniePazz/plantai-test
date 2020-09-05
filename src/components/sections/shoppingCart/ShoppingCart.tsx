@@ -1,4 +1,4 @@
-import React, { useState, useContext, useLayoutEffect } from 'react'
+import React, { useContext } from 'react'
 import src from '../../../assets/balboa_medium_blush.jpg'
 import css from './ShoppingCart.module.css'
 import setClass from '../../../utils/setClass'

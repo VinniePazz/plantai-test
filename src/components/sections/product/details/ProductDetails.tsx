@@ -1,25 +1,34 @@
-import React from 'react'
+import React, { Dispatch } from 'react'
 import css from './ProductDetails.module.css'
 import DetailsForm from './DetailsForm'
+import { Variant, Product } from '../../../../api/data'
+import { VariantsTree } from '../../../../utils/aggregation'
+import { VariantOptions } from '../../../../utils/getters'
+import { ProductReducerAction } from '../productReducer'
 
-const ProductDetails = () => {
+interface ProductDetailsProps {
+  product: Product
+  variant: Variant | undefined
+  variantsTree: VariantsTree
+  options: VariantOptions
+  dispatch: Dispatch<ProductReducerAction>
+}
+
+const ProductDetails = (props: ProductDetailsProps) => {
+  const { product, variant } = props
+
   return (
     <div className={css.productDetails}>
       <div className={css.detailsHeader}>
-        <h1 className={css.title}>Marble Queen Pothos</h1>
-        <div className={css.price}>$51</div>
+        <h1 className={css.title}>{product.title}</h1>
+        <div className={css.price}>${variant?.price}</div>
       </div>
-      <p>
-        Give your home office an upgrade! The Pothos Marble and its quick
-        growing vines full of variegated green and white leaves will make any
-        space look more lush. It is a great low maintenance choice for
-        beginners.
-      </p>
+      <p>{product.description}</p>
       <div>
         <span className={css.label}>Note</span>
         <p>Arrives in a nursery grow pot nestled inside our ceramic planter.</p>
       </div>
-      <DetailsForm />
+      <DetailsForm {...props} />
     </div>
   )
 }

@@ -1,0 +1,13 @@
+.select {
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  width: 100%;
+  cursor: pointer;
+}
+
+.select options {
+  color: red;
+}
