@@ -1,9 +1,9 @@
-.mobileNav {
+.navWrapper {
   padding: 0 1rem;
   display: flex;
 }
 
-.mobileNav > * {
+.navWrapper > * {
   flex: 1 1 0px;
 }
 
@@ -66,8 +66,24 @@
   cursor: pointer;
 }
 
+.menu {
+  margin-left: 7rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu > li {
+  margin: 0 1rem;
+}
+
 @media (min-width: 40em) {
-  .mobileNav {
+  .navWrapper {
     padding: 0 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .cartLink {
+    flex: 0 0 4rem;
   }
 }
