@@ -1,0 +1,23 @@
+.addToCart {
+  margin: 1.5rem 0;
+  font-weight: 600;
+  background-color: #00ab84;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 2px;
+  appearance: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+.addToCart:hover {
+  background-color: #009170;
+}
+
+.addToCart:disabled {
+  background: gray;
+  cursor: not-allowed;
+}

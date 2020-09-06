@@ -1,0 +1,25 @@
+@keyframes leaf {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(-100px, 100px) rotate(-15deg);
+  }
+}
+
+.leaf {
+  position: fixed;
+  cursor: pointer;
+  z-index: 20;
+  top: 0px;
+  right: 20px;
+  width: 100px;
+  height: 85px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../assets/leaf.png);
+  background-size: 65%;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-name: leaf;
+}

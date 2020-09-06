@@ -19,3 +19,23 @@ export function getVariantByOptions(
     )
   })
 }
+
+interface TotalSumAndQuantity {
+  quantity: number
+  totalSum: number
+}
+
+export function getTotalSumAndQuantity(cart: any): TotalSumAndQuantity {
+  return cart.reduce(
+    (acc: TotalSumAndQuantity, item: any) => {
+      return {
+        quantity: acc.quantity + item.quantity,
+        totalSum: acc.totalSum + item.price * item.quantity,
+      }
+    },
+    {
+      quantity: 0,
+      totalSum: 0,
+    }
+  )
+}

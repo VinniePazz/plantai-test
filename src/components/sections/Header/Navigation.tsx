@@ -4,8 +4,11 @@ import css from './Navigation.module.css'
 import useMedia from '../../../hooks/useMedia'
 
 const Navigation = () => {
-  const { toggleCart } = useContext(ShoppingCartContext)
+  const { toggleCart, cart } = useContext(ShoppingCartContext)
   const isDesktop = useMedia('min-width:64em')
+  const itemsInCart = cart.reduce((acc, item) => {
+    return acc + item.quantity
+  }, 0)
 
   // useMemo used to optimize render navigation element
   // cause every change in the ShoppingCartContext trigger
@@ -19,7 +22,7 @@ const Navigation = () => {
           </button>
         </div>
         <div className={css.cartLink}>
-          <button onClick={toggleCart}>Cart(0)</button>
+          <button onClick={toggleCart}>Cart ({itemsInCart})</button>
         </div>
       </nav>
     )
@@ -39,13 +42,13 @@ const Navigation = () => {
           </button>
         </div>
         <div className={css.cartLink}>
-          <button onClick={toggleCart}>Cart(0)</button>
+          <button onClick={toggleCart}>Cart({itemsInCart})</button>
         </div>
       </nav>
     )
     // The rest of your rendering logic
     return isDesktop ? deskTopNav : mobileNav
-  }, [isDesktop, toggleCart])
+  }, [isDesktop, itemsInCart, toggleCart])
 
   return navigation
 }

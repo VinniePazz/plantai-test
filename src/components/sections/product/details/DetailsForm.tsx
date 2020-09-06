@@ -1,10 +1,11 @@
 import React, { MouseEvent, SyntheticEvent, Dispatch } from 'react'
 import css from './DetailsForm.module.css'
 import PlanterSelect from './PlanterSelect'
-import { Variant, Product } from '../../../../api/data'
+import { Variant, Product, product } from '../../../../api/data'
 import { VariantsTree } from '../../../../utils/aggregation'
 import { VariantOptions } from '../../../../utils/getters'
 import { ProductReducerAction } from '../productReducer'
+import AddToCart from './AddToCart'
 
 // Mock colors for color panel. In real projects it's should
 // be entities in db and requested from server
@@ -29,7 +30,7 @@ interface DetailsFormProps {
 }
 
 const DetailsForm = (props: DetailsFormProps) => {
-  const { variant, variantsTree, options } = props
+  const { product, variant, variantsTree, options } = props
   const { planter, size } = options
   const handleSizeClick = (size: string) => (e: MouseEvent) => {
     props.dispatch({ type: 'SELECT_SIZE', payload: size })
@@ -103,14 +104,6 @@ const DetailsForm = (props: DetailsFormProps) => {
     </div>
   )
 
-  const addToCartContent = variant?.available
-    ? `$${variant?.price} - Add to Cart`
-    : 'Sold Out'
-
-  const addToCart = (
-    <button className={css.addToCart}>{addToCartContent}</button>
-  )
-
   return (
     <form className={css.detailsForm} onSubmit={handleSubmit}>
       <PlanterSelect
@@ -120,7 +113,7 @@ const DetailsForm = (props: DetailsFormProps) => {
       />
       {sizes}
       {colors}
-      {addToCart}
+      <AddToCart variant={variant} productTitle={product.title} />
     </form>
   )
 }

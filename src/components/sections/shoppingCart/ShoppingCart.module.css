@@ -6,12 +6,13 @@
   top: 0;
   right: 0;
   height: 100%;
-  /* overflow-y: auto; */
-  width: 75vw;
+  width: 100%;
   background: #fff;
   box-shadow: 0 0 10px rgba(45, 42, 36, 0.7);
   z-index: 1000;
   transform: translateX(0);
+  display: flex;
+  flex-direction: column;
 }
 
 .hiddenShoppingCart {
@@ -19,57 +20,48 @@
 }
 
 .cartContent {
-  padding: 0.7rem 1rem 0;
+  padding: 1rem 2rem 0;
   overflow-y: auto;
   width: 100%;
-  height: 75%;
+  flex-grow: 1;
 }
+
+.cartContentTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.125rem;
+}
+
+.cartItems {
+  border-top: 1px solid #d7d2cb;
+}
+
+/* ------------- CART SUMMARY -------------- */
 
 .cartSummary {
   border-top: 1px solid #d7d2cb;
-  padding: 1.25rem 1rem;
-  min-height: 25%;
-  max-height: 25%;
+  padding: 2rem;
   width: 100%;
-}
-
-.cartSummary button {
-  background: var(--brand);
-}
-
-.caartitems {
-  margin: 1.125rem;
-  border-top: 1px solid #d7d2cb;
-}
-
-.cartItem {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #d7d2cb;
   display: flex;
-  flex-flow: row wrap;
 }
 
-.cartItem > div:first-child {
-  height: auto;
+.cartSummary > h4 {
+  font-size: 1.4rem;
+  display: inline-block;
 }
 
-.cartItem > div:last-child {
-  height: auto;
-  width: 66.66%;
-  padding-left: 1rem;
+.cartSummary > p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: auto;
 }
 
-.productImg {
-  display: block;
-  width: 100%;
-  max-width: 110px;
-  background: #cfc7be;
-}
+/* ------------ CLOSE BUTTON -------------- */
 
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.2rem;
+  right: 2rem;
   font-size: 1.2rem;
   z-index: 10;
   cursor: pointer;
@@ -102,4 +94,22 @@
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
+}
+
+/* ------------------ MEDIA ------------------ */
+
+@media (min-width: 40em) {
+  .shoppingCart {
+    width: 66%;
+    min-width: 22rem;
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .shoppingCart {
+    width: 30%;
+    min-width: 28rem;
+    max-width: 35rem;
+  }
 }

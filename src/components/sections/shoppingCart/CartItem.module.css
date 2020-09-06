@@ -1,0 +1,62 @@
+.cartItem {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #d7d2cb;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.cartItem > div:first-child {
+  height: auto;
+}
+
+.productInfo {
+  height: auto;
+  width: 66.66%;
+  margin-left: auto;
+}
+
+.productInfo > * {
+  margin-bottom: 0.5rem;
+}
+
+.productImg {
+  display: block;
+  width: 100%;
+  max-width: 110px;
+  background: #cfc7be;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.quantityBar {
+  width: 55%;
+  border: 1px solid #d7d2cb;
+  max-width: 6.25rem;
+  display: flex;
+}
+
+.quantityBar > button {
+  color: #2d2a24;
+  padding: 0.5rem 0.625rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.quantityBar > span {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removeButton {
+  margin: 0 auto;
+  color: #00ab84;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}

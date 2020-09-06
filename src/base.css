@@ -40,6 +40,7 @@ button {
   font-size: inherit;
   line-height: inherit;
   display: inline-block;
+  outline: none;
 }
 
 a {

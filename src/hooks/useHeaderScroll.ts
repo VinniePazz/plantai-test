@@ -21,12 +21,11 @@ const useHeaderScroll = (): HeaderScrollState => {
       e.stopPropagation()
 
       if (initialScrollEvent) {
-        // TODO (optional): handle header visibility after some delay
         initialScrollEvent = false
         scrollPositionY.current = window.pageYOffset
       } else {
         if (
-          window.pageYOffset > 100 &&
+          window.pageYOffset > 80 &&
           scrollPositionY.current < window.pageYOffset
         ) {
           setVisibility('hidden')

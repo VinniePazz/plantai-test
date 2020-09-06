@@ -1,4 +1,5 @@
 export interface Variant {
+  id: number
   planter: string
   planterColor: string
   size: string
@@ -19,6 +20,7 @@ export const product: Product = {
     'Give your home office an upgrade! The Pothos Marble and its quick growing vines full of variegated green and white leaves will make any space look more lush. It is a great low maintenance choice for beginners.',
   variants: [
     {
+      id: 1,
       planter: 'dolores',
       planterColor: 'black',
       size: 'medium',
@@ -27,6 +29,7 @@ export const product: Product = {
       img: require('../assets/dolores_medium_black.jpg'),
     },
     {
+      id: 2,
       planter: 'balboa',
       planterColor: 'black',
       size: 'medium',
@@ -35,6 +38,7 @@ export const product: Product = {
       img: require('../assets/balboa_medium_black.jpg'),
     },
     {
+      id: 3,
       planter: 'balboa',
       planterColor: 'black',
       size: 'small',
@@ -43,6 +47,7 @@ export const product: Product = {
       img: require('../assets/balboa_medium_black.jpg'),
     },
     {
+      id: 4,
       planter: 'balboa',
       planterColor: 'blush',
       size: 'medium',
@@ -51,6 +56,7 @@ export const product: Product = {
       img: require('../assets/balboa_medium_blush.jpg'),
     },
     {
+      id: 5,
       planter: 'balboa',
       planterColor: 'cream',
       size: 'medium',
@@ -59,6 +65,7 @@ export const product: Product = {
       img: require('../assets/balboa_medium_cream.gif'),
     },
     {
+      id: 6,
       planter: 'balboa',
       planterColor: 'mint',
       size: 'medium',
