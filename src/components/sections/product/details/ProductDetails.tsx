@@ -1,4 +1,4 @@
-import React, { useState, useContext, Dispatch } from 'react'
+import React, { useContext, Dispatch } from 'react'
 import css from './ProductDetails.module.css'
 import DetailsForm from './DetailsForm'
 import { Variant, Product } from '../../../../api/data'

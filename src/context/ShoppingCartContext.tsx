@@ -8,9 +8,13 @@ import React, {
 import useScrollBar from '../hooks/useScrollBar'
 import { Variant } from '../api/data'
 
+interface CartItem extends Variant {
+  quantity: number
+}
+
 // =================== CONTEXT =================== //
 interface ShoppingCartContext {
-  cart: any[]
+  cart: CartItem[]
   show: boolean
   animation: boolean
   toggleCart: () => void
@@ -47,7 +51,7 @@ type CartActions =
   | { type: 'DECREASE_ITEM_QUANTITY'; payload: any }
 
 const initCartReducer = () => {
-  let cart
+  let cart: CartProduct[]
 
   const cartFromStorage = localStorage.getItem('cart')
 
@@ -60,7 +64,7 @@ const initCartReducer = () => {
   return cart
 }
 
-function cartReducer(state: CartProduct[], action: CartActions) {
+function cartReducer(state: CartProduct[], action: CartActions): CartProduct[] {
   switch (action.type) {
     case 'ADD_ITEM_TO_CART': {
       const existedItem = state.find((item) => item.id === action.payload.id)
@@ -135,7 +139,7 @@ function cartReducer(state: CartProduct[], action: CartActions) {
 
 export const ShoppingCartProvider = (props: { children: React.ReactNode }) => {
   const [cart, dispatch] = useReducer(cartReducer, [], initCartReducer)
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const [animation, setAnimation] = useState(false)
   useScrollBar(show)
 
@@ -144,8 +148,8 @@ export const ShoppingCartProvider = (props: { children: React.ReactNode }) => {
     localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
 
+  // leaf animation on Add to Cart action
   useEffect(() => {
-    // leaf animation on Add to Cart action
     if (animation) {
       setTimeout(() => {
         setAnimation(false)

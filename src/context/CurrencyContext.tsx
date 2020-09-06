@@ -21,7 +21,7 @@ CurrencyContext.displayName = 'CurrencyContext'
 
 export const CurrencyProvider = (props: { children: React.ReactNode }) => {
   const [rate, setRate] = useState(0.83)
-  const [error, setError] = useState(false)
+  const [, setError] = useState(false)
   const [isEuro, setEuro] = useState(false)
 
   useEffect(() => {

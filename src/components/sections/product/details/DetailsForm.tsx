@@ -1,7 +1,7 @@
 import React, { MouseEvent, SyntheticEvent, Dispatch } from 'react'
 import css from './DetailsForm.module.css'
 import PlanterSelect from './PlanterSelect'
-import { Variant, Product, product } from '../../../../api/data'
+import { Variant, Product } from '../../../../api/data'
 import { VariantsTree } from '../../../../utils/aggregation'
 import { VariantOptions } from '../../../../utils/getters'
 import { ProductReducerAction } from '../productReducer'

@@ -1,8 +1,19 @@
 import React, { useContext } from 'react'
 import css from './AddToCart.module.css'
 import { ShoppingCartContext } from '../../../../context/ShoppingCartContext'
+import { Variant } from '../../../../api/data'
 
-const AddToCart = ({ variant, productTitle, priceWithCurrency }: any) => {
+interface AddToCartProps {
+  variant: Variant | undefined
+  productTitle: string
+  priceWithCurrency: string
+}
+
+const AddToCart = ({
+  variant,
+  productTitle,
+  priceWithCurrency,
+}: AddToCartProps) => {
   const { dispatch, setAnimation } = useContext(ShoppingCartContext)
 
   const handleClick = () => {
@@ -11,7 +22,7 @@ const AddToCart = ({ variant, productTitle, priceWithCurrency }: any) => {
     setAnimation(true)
   }
 
-  const disabled = !variant.available
+  const disabled = variant?.available
 
   const addToCartContent = disabled
     ? 'Sold Out'
