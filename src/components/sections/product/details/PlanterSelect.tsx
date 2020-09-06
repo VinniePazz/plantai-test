@@ -11,7 +11,7 @@ interface PlanterSelectProps {
 
 const PlanterSelect = (props: PlanterSelectProps) => {
   const { planter, variantsTree, dispatch } = props
-  const options = Object.keys(variantsTree)
+  const options = Object.keys(variantsTree).sort()
 
   const handleChange = (e: any) => {
     dispatch({ type: 'SELECT_PLANTER', payload: e.target.value })

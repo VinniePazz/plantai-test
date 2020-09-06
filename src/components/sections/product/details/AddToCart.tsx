@@ -22,7 +22,7 @@ const AddToCart = ({
     setAnimation(true)
   }
 
-  const disabled = variant?.available
+  const disabled = !variant?.available
 
   const addToCartContent = disabled
     ? 'Sold Out'

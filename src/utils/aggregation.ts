@@ -5,6 +5,14 @@ interface Sizes {
 }
 
 export interface VariantsTree {
+  // First level key in Variant Tree is a planter style: "DOLORES" | "BALBOA" etc
+  // Second level key: Sizes (small and medium). Sizes are arrays with planter colors
+  // For example:
+  //                          --small: ['black', 'cream', 'pale gray']
+  //               -- balboa  --medium: ['black', 'mint']
+  // VariantsTree-
+  //               -- dolores --small: ['mint']
+  //                          --medium: ['black', 'pale gray']
   [key: string]: Sizes
 }
 
