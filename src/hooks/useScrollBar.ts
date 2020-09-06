@@ -1,21 +1,23 @@
 import { useRef, useLayoutEffect } from 'react'
 import { handleScrollBar } from '../utils/handleScrollbar'
 
-const useScrollBar = (show: boolean) => {
+// Hide browser scrollbar for body when some Dialog appeared, etc.
+// Second parameter set delay before showing browser scrollbar again
+const useScrollBar = (hide: boolean, timeOut = 0) => {
   const initialRender = useRef(true)
 
   useLayoutEffect(() => {
-    if (show) {
+    if (hide) {
       handleScrollBar('hide')
     } else {
       if (!initialRender.current) {
         setTimeout(() => {
           handleScrollBar('show')
-        }, 500)
+        }, timeOut)
       }
     }
     initialRender.current = false
-  }, [show])
+  }, [hide, timeOut])
 }
 
 export default useScrollBar

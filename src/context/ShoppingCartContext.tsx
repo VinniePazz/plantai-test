@@ -141,7 +141,7 @@ export const ShoppingCartProvider = (props: { children: React.ReactNode }) => {
   const [cart, dispatch] = useReducer(cartReducer, [], initCartReducer)
   const [show, setShow] = useState(false)
   const [animation, setAnimation] = useState(false)
-  useScrollBar(show)
+  useScrollBar(show, 500)
 
   useEffect(() => {
     // synchronize cart with localeStorage
