@@ -1,13 +1,23 @@
 import React, { useContext } from 'react'
 import css from './ShoppingCart.module.css'
 import setClass from '../../../utils/setClass'
-import { ShoppingCartContext } from '../../../context/ShoppingCartContext'
 import CartItem from './CartItem'
 import { getTotalSumAndQuantity } from '../../../utils/getters'
+import { ShoppingCartContext } from '../../../context/ShoppingCartContext'
+import { CurrencyContext } from '../../../context/CurrencyContext'
 
 const ShoppingCart = () => {
+  const { isEuro, toggleCurrency, getPriceInEuro } = useContext(CurrencyContext)
   const { show, cart, dispatch, toggleCart } = useContext(ShoppingCartContext)
   const { totalSum, quantity } = getTotalSumAndQuantity(cart)
+
+  const totalSumWithCurrency = isEuro
+    ? `\u20AC${getPriceInEuro(totalSum)}`
+    : `$${totalSum}`
+
+  const handlePriceCurrency = () => {
+    toggleCurrency()
+  }
 
   const cartContent = (
     <>
@@ -15,13 +25,19 @@ const ShoppingCart = () => {
         <h3 className={css.cartContentTitle}>Cart ({quantity}) </h3>
         <div className={css.cartItems}>
           {cart.map((item) => (
-            <CartItem key={item.id} {...item} dispatch={dispatch} />
+            <CartItem
+              key={item.id}
+              isEuro={isEuro}
+              {...item}
+              dispatch={dispatch}
+              getPriceInEuro={getPriceInEuro}
+            />
           ))}
         </div>
       </div>
       <div className={css.cartSummary}>
         <h4>Subtotal</h4>
-        <p>${totalSum}</p>
+        <p onClick={handlePriceCurrency}>{totalSumWithCurrency}</p>
       </div>
     </>
   )

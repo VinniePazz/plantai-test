@@ -12,7 +12,10 @@ const CartItem = React.memo((props: any) => {
     productTitle,
     img,
     dispatch,
+    isEuro,
+    getPriceInEuro,
   } = props
+
   const handleIncrease = (id: number | string) => () => {
     dispatch({ type: 'INCREASE_ITEM_QUANTITY', payload: { id } })
   }
@@ -25,6 +28,10 @@ const CartItem = React.memo((props: any) => {
     dispatch({ type: 'REMOVE_ITEM_FROM_CART', payload: { id } })
   }
 
+  const itemsPriceWithCurrency = isEuro
+    ? `\u20AC${getPriceInEuro(price * quantity)}`
+    : `$${price * quantity}`
+
   return (
     <div className={css.cartItem}>
       <div>
@@ -35,7 +42,7 @@ const CartItem = React.memo((props: any) => {
         <p>
           {size} / {planter} / {planterColor}
         </p>
-        <p>${price * quantity}</p>
+        <p>{itemsPriceWithCurrency}</p>
         <div className={css.actions}>
           <div className={css.quantityBar}>
             <button onClick={handleDecrease(id)}>-</button>

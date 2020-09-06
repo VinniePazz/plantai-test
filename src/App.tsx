@@ -2,14 +2,17 @@ import React from 'react'
 import { Layout } from './components/layouts'
 import { Product } from './components/sections'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
+import { CurrencyProvider } from './context/CurrencyContext'
 
 function App() {
   return (
-    <ShoppingCartProvider>
-      <Layout>
-        <Product />
-      </Layout>
-    </ShoppingCartProvider>
+    <CurrencyProvider>
+      <ShoppingCartProvider>
+        <Layout>
+          <Product />
+        </Layout>
+      </ShoppingCartProvider>
+    </CurrencyProvider>
   )
 }
 

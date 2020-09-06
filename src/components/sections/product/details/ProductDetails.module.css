@@ -25,6 +25,7 @@
   font-size: 1.875rem;
   margin-left: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .label {

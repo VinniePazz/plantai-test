@@ -26,14 +26,23 @@ interface DetailsFormProps {
   variant: Variant | undefined
   variantsTree: VariantsTree
   options: VariantOptions
+  priceWithCurrency: string
   dispatch: Dispatch<ProductReducerAction>
 }
 
 const DetailsForm = (props: DetailsFormProps) => {
-  const { product, variant, variantsTree, options } = props
+  const {
+    product,
+    variant,
+    variantsTree,
+    options,
+    priceWithCurrency,
+    dispatch,
+  } = props
   const { planter, size } = options
+
   const handleSizeClick = (size: string) => (e: MouseEvent) => {
-    props.dispatch({ type: 'SELECT_SIZE', payload: size })
+    dispatch({ type: 'SELECT_SIZE', payload: size })
   }
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -42,7 +51,7 @@ const DetailsForm = (props: DetailsFormProps) => {
 
   const handleColor = (color: string) => (e: MouseEvent) => {
     e.preventDefault()
-    props.dispatch({ type: 'SELECT_COLOR', payload: color })
+    dispatch({ type: 'SELECT_COLOR', payload: color })
   }
 
   const sizes = (
@@ -109,11 +118,15 @@ const DetailsForm = (props: DetailsFormProps) => {
       <PlanterSelect
         variantsTree={variantsTree}
         planter={planter}
-        dispatch={props.dispatch}
+        dispatch={dispatch}
       />
       {sizes}
       {colors}
-      <AddToCart variant={variant} productTitle={product.title} />
+      <AddToCart
+        variant={variant}
+        productTitle={product.title}
+        priceWithCurrency={priceWithCurrency}
+      />
     </form>
   )
 }
