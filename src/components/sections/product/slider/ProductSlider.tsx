@@ -2,7 +2,18 @@ import React from 'react'
 import Slider from 'react-slick'
 import css from './ProductSlider.module.css'
 import './custom-slick-dots.css'
-import { Variant, Product, product } from '../../../../api/data'
+import { Variant, Product } from '../../../../api/data'
+
+const CustomArrow = ({ type, onClick }: any) => {
+  return (
+    <button
+      className={`${css.arrow} ${
+        type === 'left-arrow' ? css.arrowLeft : css.arrowRight
+      }`}
+      onClick={onClick}
+    />
+  )
+}
 
 const sliderSettings = {
   dots: true,
@@ -10,8 +21,10 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
+  arrows: true,
   dotsClass: `slick-dots`,
+  prevArrow: <CustomArrow type="left-arrow" />,
+  nextArrow: <CustomArrow type="right-arrow" />,
 }
 
 interface ProductSliderProps {

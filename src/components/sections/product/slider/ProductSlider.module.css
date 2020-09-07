@@ -9,8 +9,29 @@
   background: #cfc7be;
 }
 
+.arrow {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+}
+
+.arrowLeft {
+  left: 0;
+}
+
+.arrowRight {
+  right: 0;
+}
+
 @media (min-width: 64em) {
   .sliderContainer {
     width: 50%;
+  }
+  .arrow {
+    display: block;
   }
 }
