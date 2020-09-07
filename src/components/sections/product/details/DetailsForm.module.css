@@ -76,7 +76,3 @@
   color: var(--text-primary);
   cursor: pointer;
 }
-
-.selected > .colorLabel {
-  border-bottom: 1px solid #2d2a24;
-}
