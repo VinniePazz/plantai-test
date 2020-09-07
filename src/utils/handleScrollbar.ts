@@ -21,14 +21,21 @@ function getScrollbarWidth() {
 //TODO: JSDOC and type annotation
 export const handleScrollBar = (type: 'hide' | 'show') => {
   const body = document.body
+  const header = document.getElementById('header')
   const scrollBar = getScrollbarWidth()
   if (body) {
-    if (type === 'hide') {
+    if (type === 'hide' && header) {
       body.style.overflowY = 'hidden'
       body.style.paddingRight = `${scrollBar}px`
+      if (header) {
+        header.style.paddingRight = `${scrollBar}px`
+      }
     } else {
       body.style.overflowY = ''
       body.style.paddingRight = ''
+      if (header) {
+        header.style.paddingRight = ''
+      }
     }
   }
 }

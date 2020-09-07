@@ -16,7 +16,7 @@ const Header = () => {
   })
 
   return (
-    <header className={className}>
+    <header className={className} id="header">
       <div className={css.headerContainer}>
         <Banner />
         <Navigation />
