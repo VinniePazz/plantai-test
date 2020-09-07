@@ -23,9 +23,11 @@ const Navigation = () => {
         <li>Our Summer Picks</li>
         <li>Online workshops</li>
       </ul>
-      <div className={css.cartLink}>
+      <ul className={css.userMenu}>
+        <li>Search</li>
+        <li>Log In</li>
         <button onClick={toggleCart}>Cart ({itemsInCart})</button>
-      </div>
+      </ul>
     </nav>
   )
 
