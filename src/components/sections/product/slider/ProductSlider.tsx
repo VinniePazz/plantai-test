@@ -37,7 +37,6 @@ const ProductSlider = (props: ProductSliderProps) => {
   const productImages =
     variant?.size === 'small' ? product.images.small : product.images.medium
   const slides = [props.variant?.img, ...productImages]
-  console.log(slides)
   return (
     <div className={css.sliderContainer}>
       <Slider {...sliderSettings}>

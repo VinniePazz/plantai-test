@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react'
+import React, { useContext } from 'react'
 import { ShoppingCartContext } from '../../../context/ShoppingCartContext'
 import css from './Navigation.module.css'
 import useMedia from '../../../hooks/useMedia'
